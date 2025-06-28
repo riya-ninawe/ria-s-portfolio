@@ -108,7 +108,7 @@
     }
 
     .intro h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     .intro h2 span {
@@ -225,6 +225,8 @@
       background-color: #111;
       color: #777;
     }
+  
+
 
     @media (max-width: 768px) {
       .intro h2 {
@@ -238,6 +240,18 @@
   </style>
 </head>
 <body>
+  <div id="hireForm" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+ background:#1c1c1c; padding:30px; border-radius:20px; box-shadow:0 0 20px #ff4c60; z-index:9999;">
+  <h3 style="color:#ff4c60; margin-bottom:10px;">Hire Me 💼</h3>
+  <form action="https://formsubmit.co/riyaninawe15@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="what is the position and salary you want to hire me at write here" required></textarea>
+    <button class="btn" type="submit">Send</button>
+    <button class="btn" type="button" onclick="closeHireForm()">Close</button>
+  </form>
+</div>
+
 
 <header>
   <div class="logo">RIYA</div>
@@ -255,22 +269,24 @@
 <section class="home" id="home">
   <div class="profile-img"></div>
   <div class="intro">
-    <h2>Hi, I'm <span>Riya Ninawe</span></h2>
+    <h2>Hey there , I'm <span> Riya Ninawe </span></h2>
     <h2><span id="role"></span></h2>
-    <p>I’m a Java Developer with a passion for creating clean, beautiful, and user-friendly web experiences.</p>
+    <p>I’m a Full Stack Java Developer with a passion for creating clean, beautiful, and user-friendly web experiences.</p>
     <div class="buttons">
-      <button class="btn">Hire Me</button>
-      <button class="btn">Download CV</button>
+      <button class="btn" onclick="openHireForm()">Hire Me</button>
+
+      <a href="Ria_Ninawe_CV.pdf" download class="btn">Download CV</a>
+
     </div>
     <div class="socials">
-      <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
-      <a href="#"><ion-icon name="logo-github"></ion-icon></a>
-      <a href="#"><ion-icon name="mail-outline"></ion-icon></a>
+      <a href="https://github.com/riya-ninawe" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:riyaninawe15@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/ria-ninawe-a95a45303/" target="_blank"><i class="fab fa-linkedin"></i></a> 
     </div>
   </div>
 </section>
 
-<section id="services" style="background-color: #121212;">
+<section id="services" style="background-color: #271919;">
   <h2 class="section-title">Services</h2>
   <div class="card-container">
     <div class="card"><h3>Java Development</h3><p>Robust and scalable Java-based backend solutions tailored to your needs.</p></div>
@@ -314,21 +330,33 @@
   </form>
 </section>
 
-<section id="contact" style="background-color: #121212;">
-  <h2 class="section-title">Contact Me</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea rows="5" placeholder="Your Message" required></textarea>
-    <button class="btn" type="submit">Send Message</button>
-  </form>
+<section id="projects" style="background-color: #1a1a1a;">
+  <h2 class="section-title">Projects</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Grievance Portal 💌</h3>
+      <p>A romantic portal website with floating hearts, custom forms, and pink aesthetic.</p>
+      <p><strong>Tech:</strong> HTML, CSS, JS, Google Sheets</p>
+    </div>
+    <div class="card">
+      <h3>Weight Tracker 🌸</h3>
+      <p>8-month weight loss & glow-up tracker, Google Sheets connected!</p>
+      <p><strong>Tech:</strong> HTML, JS</p>
+    </div>
+    <div class="card">
+      <h3>Java Compiler Web App ☕</h3>
+      <p>A fun Java IDE in browser with code editor and output system using API.</p>
+      <p><strong>Tech:</strong> HTML, JS, API</p>
+    </div>
+  </div>
 </section>
+
 
 <footer>
   <p>&copy; 2025 Ria Ninawe. All Rights Reserved.</p>
 </footer>
 <script>
-  const roles = ["Java Developer", "Frontend Enthusiast", "Freelancer"];
+  const roles = ["Java Developer","Freelancer","Frontend-developer","Backend-developer","Website-developer"];
   let i = 0;
   function animateRole() {
     document.getElementById("role").innerText = roles[i];
@@ -336,11 +364,18 @@
     setTimeout(animateRole, 2000);
   }
   animateRole();
-
+  function openHireForm() {
+  document.getElementById('hireForm').style.display = 'block';
+}
+function closeHireForm() {
+  document.getElementById('hireForm').style.display = 'none';
+}
   function toggleMenu() {
     document.getElementById("navbar").classList.toggle("show");
   }
 </script>
+
+
 
 </body>
 </html>
