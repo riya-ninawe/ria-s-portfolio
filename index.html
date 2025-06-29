@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ria Ninawe | Java Developer</title>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <style>
+    :root {
+  --bg-color: #0f0f0f;
+  --text-color: #fff;
+  --card-bg: #1c1c1c;
+  --accent: #ff4c60;
+}
+
+body.light-mode {
+  --bg-color: #f5f5f5;
+  --text-color: #111;
+  --card-bg: #fff;
+  --accent: #ff4c60;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
     * {
       margin: 0; padding: 0;
       box-sizing: border-box;
@@ -98,7 +119,8 @@
       width: 300px;
       height: 300px;
       border-radius: 50%;
-      background: url('https://i.pinimg.com/564x/bc/55/89/bc55897cdd2c9409d4bb946f163da216.jpg') no-repeat center center/cover;
+      /* photo */
+      background: url('assets/images/pfp32.jpeg') no-repeat center center/cover;  
       box-shadow: 0 0 20px #ff4c60;
       margin-bottom: 30px;
     }
@@ -179,11 +201,32 @@
       animation: fadeInUp 1s ease forwards;
       opacity: 0;
     }
-
-    .card:hover {
+/* tryyyyyy */
+     .card:hover {     
       transform: translateY(-10px);
       box-shadow: 0 0 20px rgba(255, 76, 96, 0.6);
     }
+    .cert-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 18px;
+  border: 2px solid #ff4c60;
+  color: #ff4c60;
+  background: transparent;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cert-btn:hover {
+  background-color: #ff4c60;
+  color: #fff;
+}
+.card p {
+  margin-bottom: 10px;
+}
+
 
     @keyframes fadeInUp {
       0% { transform: translateY(20px); opacity: 0; }
@@ -196,6 +239,38 @@
       gap: 30px;
       justify-content: center;
     }
+    #stickyHireBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent, #ff4c60);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 0 15px rgba(255, 76, 96, 0.5);
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+  animation: popIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}nav a.active {
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+
+#stickyHireBtn:hover {
+  background: #ff6f80;
+  transform: scale(1.05);
+}
+
 
     form {
       max-width: 500px;
@@ -218,6 +293,52 @@
       outline: none;
       margin-bottom: 20px;
     }
+    .skills-bars {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.btn.active {
+  background-color: #ff4c60;
+  color: white;
+  font-weight: bold;
+}
+
+
+.skill h4 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.bar {
+  height: 10px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar .fill {
+  height: 100%;
+  background: #ff4c60;
+  border-radius: 10px;
+  animation: fillBar 2s ease-in-out forwards;
+  width: 0;
+}
+nav a.active {
+  color: #ff4c60;
+  font-weight: bold;
+  border-bottom: 2px solid #ff4c60;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+}
+
 
     footer {
       text-align: center;
@@ -227,6 +348,11 @@
     }
   
 
+    nav a.active {
+  color: #ff4c60;
+  font-weight: bold;
+  border-bottom: 2px solid #ff4c60;
+}
 
     @media (max-width: 768px) {
       .intro h2 {
@@ -237,8 +363,596 @@
         width: 90%;
       }
     }
-  </style>
+    .cert-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #ff4c60;
+  border: 2px solid #ff4c60;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cert-btn:hover {
+  background-color: #ff4c60;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+    #backToTopBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #ff4c60;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px rgba(255, 76, 96, 0.4);
+  display: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTopBtn:hover {
+  transform: scale(1.1);
+  background-color: #ff6f80;
+}
+.timeline-container {
+  position: relative;
+  margin: auto;
+  max-width: 800px;
+  padding: 40px 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 40px;
+  border-left: 3px solid #ff4c60;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-color: #ff4c60;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff4c60;
+}
+
+.timeline-content {
+  background: #1c1c1c;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 76, 96, 0.3);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.timeline-content h3 {
+  margin-bottom: 8px;
+  color: #ff4c60;
+}
+timeline-content.btn:hover{
+  background-color: #ff4c60;
+  color: #fff;
+  transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255, 76, 96, 0.6);
+}
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.badge-container img {
+  transition: transform 0.3s ease;
+}
+
+.badge-container img:hover {
+  transform: scale(1.1);
+}
+.floating-love-wall {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.floating-love-wall span {
+  position: absolute;
+  white-space: nowrap;
+  color: #ff4c60;
+  font-size: 1rem;
+  animation: floatLove 12s linear infinite;
+  opacity: 0.8;
+}
+
+.floating-love-wall span:nth-child(1) { top: 10%; left: -100%; animation-delay: 0s; }
+.floating-love-wall span:nth-child(2) { top: 30%; left: -120%; animation-delay: 2s; }
+.floating-love-wall span:nth-child(3) { top: 50%; left: -140%; animation-delay: 4s; }
+.floating-love-wall span:nth-child(4) { top: 70%; left: -160%; animation-delay: 6s; }
+.floating-love-wall span:nth-child(5) { top: 85%; left: -180%; animation-delay: 8s; }
+
+@keyframes floatLove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(200vw); }
+}
+.rotating-wall {
+  perspective: 1000px;
+  height: 200px;
+  margin-top: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.error-msg {
+  color: #ff4c60;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  display: block;
+  height: 10px;
+}
+
+
+.wall {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotateWall 20s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.wall img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #ff4c60;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255,76,96,0.3);
+  transition: transform 0.3s ease;
+}
+
+.wall img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes rotateWall {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 0;
+}
+
+.tech-item {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 20px;
+  width: 120px;
+  box-shadow: 0 0 10px rgba(255, 76, 96, 0.2);
+}
+
+.tech-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 76, 96, 0.4);
+}
+
+.tech-item img {
+  width: 60px;
+  height: 60px;
+}
+
+.tech-item span {
+  display: block;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 500;
+}
+.error-msg {
+  color: #ff4c60;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  display: block;
+  height: 14px;
+}
+ 
+
+
+
+
+
+
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #000;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4d4d;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.3);
+    padding: 15px 0;
+    z-index: 1000;
+  }
+  nav {
+  transition: all 0.3s ease-in-out;
+}
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+
+  nav a:hover {
+    background-color: #1a1a1a;
+  }
+}
+
+
+
+#hireForm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1c1c1c;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff4d4d;
+  z-index: 9999;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+}
+
+#hireForm input,
+#hireForm textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ff4d4d;
+  background: transparent;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+#hireForm button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  border-radius: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#hireForm button:hover {
+  background-color: #ff4d4d;
+  color: #000;
+}
+@media (max-width: 500px) {
+  #hireForm {
+    padding: 20px 15px;
+    width: 92%;
+  }
+
+  #hireForm input,
+  #hireForm textarea {
+    font-size: 0.85rem;
+  }
+}
+#hireForm {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 25px rgba(255, 100, 150, 0.4);
+}
+
+
+
+
+
+
+/* Base styles */
+#certificates {
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--accent, #ff8ba7);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: var(--accent, #ff8ba7);
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cert-btn:hover {
+  background: #ffb0c1;
+}
+
+/* Modal */
+#certModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
+}
+
+#certModal img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 10px;
+}
+
+#certModal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+}
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.tech-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+#projectPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff4c60;
+  z-index: 9999;
+  width: 90%;            /* responsive width */
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;      /* scroll if needed */
+}
+
+/* Optional: make buttons stack or adjust nicely */
+#projectPopup .btn {
+  margin-top: 15px;
+  width: 100%;            /* full width on mobile */
+}
+@media (max-width: 500px) {
+  #projectPopup {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  #projectPopup h3 {
+    font-size: 16px;
+  }
+
+  #projectPopup p, #projectPopup span {
+    font-size: 14px;
+  }
+}
+.visit-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #1c1c1c;
+  border: 2px solid #ff4c60;
+  color: #ff4c60;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.visit-btn:hover {
+  background-color: #ff4c60;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff4c60;
+}
+@media (max-width: 500px) {
+  .visit-btn {
+    width: 100%;
+    display: block;
+  }
+
+  #projectPopup .btn {
+    width: 100%;
+    display: block;
+  }
+}
+.glass-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ff4c60;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 76, 96, 0.3);
+  font-weight: 500;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 76, 96, 0.2);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 76, 96, 0.6);
+}
+
+
+</style>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
+<a href="#home" onclick="openHireForm()" id="stickyHireBtn">
+  💼 Hire Me
+</a>
+
+
 <body>
   <div id="hireForm" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
  background:#1c1c1c; padding:30px; border-radius:20px; box-shadow:0 0 20px #ff4c60; z-index:9999;">
@@ -255,106 +969,1148 @@
 
 <header>
   <div class="logo">RIYA</div>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <!-- Hamburger Icon -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <ion-icon name="menu-outline" size="large" style="color: #ff4d4d;"></ion-icon>
+  </div>
+
+  <!-- Navigation Menu -->
   <nav id="navbar">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#skills">Skills</a>
     <a href="#education">Education</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
+
 <section class="home" id="home">
-  <div class="profile-img"></div>
+  <!-- photo -->
+  <div class="profile-img"></div>    
   <div class="intro">
     <h2>Hey there , I'm <span> Riya Ninawe </span></h2>
     <h2><span id="role"></span></h2>
-    <p>I’m a Full Stack Java Developer with a passion for creating clean, beautiful, and user-friendly web experiences.</p>
+    <p>I’m a Full Stack Java Developer with a passion for creating clean, beautiful, and user-friendly web application</p>
     <div class="buttons">
-      <button class="btn" onclick="openHireForm()">Hire Me</button>
-
-      <a href="Ria_Ninawe_CV.pdf" download class="btn">Download CV</a>
+      
+      <br><br><br>
+      <a href="certificates/Ria Ninawe - resume -  copy.pdf" class="btn" download target="_blank" rel="noopener noreferrer">Download CV</a>
+      <br><br><br>
 
     </div>
     <div class="socials">
-      <a href="https://github.com/riya-ninawe" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:riyaninawe15@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/ria-ninawe-a95a45303/" target="_blank"><i class="fab fa-linkedin"></i></a> 
+      <a href="https://github.com/riya-ninawe" target="_blank" title="GitHub">
+        <ion-icon name="logo-github"></ion-icon> 
+      </a>
+      <a href="mailto:riyaninawe15@gmail.com" title="Email">
+        <ion-icon name="mail-outline"></ion-icon> 
+      </a>
+      <a href="https://www.linkedin.com/in/ria-ninawe-a95a45303/" target="_blank" title="LinkedIn">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
     </div>
+    
   </div>
 </section>
 
 <section id="services" style="background-color: #271919;">
   <h2 class="section-title">Services</h2>
+  <p style="text-align:center; margin-top: -20px; color: #ccc; font-size: 0.95rem;">
+    - Trusted by clients to build fast, functional & beautiful digital solutions.
+    <br><br>
+    - Handpicked services crafted with precision, performance & passion.
+  </p>
+  
+  <br> <br><br>
   <div class="card-container">
-    <div class="card"><h3>Java Development</h3><p>Robust and scalable Java-based backend solutions tailored to your needs.</p></div>
-    <div class="card"><h3>Responsive Web Design</h3><p>Beautiful, mobile-friendly websites that look great on all devices.</p></div>
-    <div class="card"><h3>Frontend Magic</h3><p>Smooth animations and transitions with clean HTML, CSS, JS & Bootstrap.</p></div>
+    <div class="card">
+      <h3>Enterprise-Grade Java Development</h3>
+      <br>
+      <p>Scalable, secure backend architectures developed using Spring Boot and Java — engineered to handle real-world performance and reliability demands.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Pixel-Perfect Responsive Design</h3>
+      <br>
+      <p>Clean, intuitive designs that look and feel flawless across all screen sizes, ensuring your users have a delightful experience — everywhere.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Interactive Frontend Engineering</h3>
+      <br>
+      <p>Modern UI built with advanced JavaScript, Bootstrap, and CSS — animations, transitions and interactions crafted to elevate user engagement.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Custom Web Portals & Dashboards</h3>
+      <br>
+      <p>Bespoke web solutions including admin panels, grievance portals, and user dashboards — tailored to your exact needs with seamless UX.</p>
+    </div>
+    
+    <div class="card">
+      <h3>API Integration & Backend Logic</h3>
+      <br>
+      <p>RESTful API development and third-party integrations — powering real-time communication between frontend and backend with efficiency.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Performance Optimisation & Bug Fixing</h3>
+      <br>
+      <p>Identifying performance bottlenecks, resolving UI/UX bugs, and optimising load time — ensuring your website runs fast, smooth and error-free.</p>
+    </div>
+    
   </div>
 </section>
 
+<section id="timeline" style="background-color:#121212;">
+  <h2 class="section-title">📌 My Journey</h2>
+  <div class="timeline-container">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2020 – Academic Foundations 📚</h3>
+        <p>Completed secondary education with a strong academic record, focusing on science, mathematics, and analytical reasoning — setting the stage for a future in technology.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2023 – Technological Discovery & Skill Building 🌱</h3>
+        <p>Initiated self-paced learning in Python, web development, and UI/UX design. Gained hands-on experience by creating personal projects and exploring modern development tools.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2023 – B.E. in Electronics & Communication Engineering 🎓</h3>
+        <p>Embarked on a Bachelor’s degree in ECE, with a strong emphasis on programming logic, embedded systems, and software-hardware integration. i was more focused towards software application and hence i decided to be a full stack java developer.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2024 – Freelance Projects & Real-World Application 💻</h3>
+        <p>Developed end-to-end websites and interactive portals for clients — blending creativity with code using HTML, CSS, JavaScript, Java, APIs, and Google integrations.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2025 – Advancing as a Full Stack Java Developer 🚀</h3>
+        <p>Currently focused on mastering full stack development with Java, Spring Boot, and modern frontend technologies — building scalable, high-performance applications.</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+   
+
+<!-- skills  -->
 <section id="skills">
   <h2 class="section-title">Skills</h2>
   <div class="card-container">
-    <div class="card"><h3>Java</h3><p>OOP, JDBC, Collections, Multithreading</p></div>
-    <div class="card"><h3>Web Dev</h3><p>HTML, CSS, JS, Bootstrap, DOM</p></div>
-    <div class="card"><h3>Tools</h3><p>Git, GitHub, VS Code, Figma</p></div>
+    <div class="card">
+      <h3>Core Java Development</h3>
+      <br>
+      <p>OOP Principles, Collections Framework, JDBC, Exception Handling, File I/O, Multithreading</p>
+    </div>
+    
+    <div class="card">
+      <h3>Frontend Web Development</h3>
+      <br>
+      <p>HTML5, CSS3, JavaScript (ES6+), Bootstrap,tailwind, DOM Manipulation, Responsive Design</p>
+    </div>
+    
+    <div class="card">
+      <h3>UI/UX & Design Thinking</h3>
+      <br>
+      <p>Figma, Wireframing, Prototyping, Pixel-Perfect Implementation, Accessibility Standards</p>
+    </div>
+    
+    <div class="card">
+      <h3>Development Tools & Version Control</h3>
+      <br>
+      <p>Git, GitHub, VS Code, Chrome DevTools, Netlify, Firebase (basics) , Vercel</p>
+    </div>
+    
+    <div class="card">
+      <h3>Backend & API Integration</h3>
+      <br>
+      <p>REST APIs, JSON, Fetch API, Google Sheets API, FormSubmit</p>
+    </div>
+    
+    <div class="card">
+      <h3>Soft Skills & Client Communication</h3>
+      <br>
+      <p>Time Management, Clear Communication, Problem Solving, Creative Thinking, Team Collaboration</p>
+    </div>
+    
+  </div>
+</section>
+<div class="skills-bars">
+  <div class="skill">
+    <h4>Java <span>100%</span></h4>
+    <div class="bar"><div class="fill" style="width: 100%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>HTML/CSS <span>100%</span></h4>
+    <div class="bar"><div class="fill" style="width: 100%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>JavaScript <span>100%</span></h4>
+    <div class="bar"><div class="fill" style="width: 100%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>MY SQL <span>55%</span></h4>
+    <div class="bar"><div class="fill" style="width: 55%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>Spring Boot <span>40%</span></h4>
+    <div class="bar"><div class="fill" style="width: 40%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>Bootstrap <span>80%</span></h4>
+    <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>React <span>75%</span></h4>
+    <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>Git & GitHub <span>90%</span></h4>
+    <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>C/C++ <span>55%</span></h4>
+    <div class="bar"><div class="fill" style="width: 50%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>python <span>65%</span></h4>
+    <div class="bar"><div class="fill" style="width: 65%;"></div></div>
+  </div>
+
+</div>
+<br><br><br><br><br><br>
+
+
+<section id="techstack" style="background-color:#121212;">
+  <h2 class="section-title">🛠 Tech Stack</h2>
+  <div class="tech-grid">
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+      <span>Java</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+      <span>C</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+      <span>C++</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <span>Python</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+      <span>HTML5</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+      <span>CSS3</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+      <span>JavaScript</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+      <span>Bootstrap</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+      <span>React</span>
+    </div>
+    
+    <div class="tech-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel" style="width: 50px; height: 50px;">
+      <span>Excel</span>
+    </div>
+      
+    <!-- ✅ Canva -->
+<div class="tech-item">
+  <img src="https://img.icons8.com/color/48/000000/canva.png" alt="Canva" style="width: 50px; height: 50px;">
+  <span>Canva</span>
+</div>
+
+<!-- ✅ Google Sheets -->
+<div class="tech-item">
+  <img src="https://img.icons8.com/color/48/000000/google-sheets.png" alt="Google Sheets" style="width: 50px; height: 50px;">
+  <span>Google Sheets</span>
+</div>
+
+<!-- ✅ Figma (Already matched) -->
+<div class="tech-item">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" style="width: 50px; height: 50px;">
+  <span>Figma</span>
+</div>
+
+<!-- ✅ PowerPoint -->
+<div class="tech-item">
+  <img src="https://img.icons8.com/color/48/000000/microsoft-powerpoint-2019--v1.png" alt="PowerPoint" style="width: 50px; height: 50px;">
+  <span>PowerPoint</span>
+</div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+      <span>MySQL</span>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+      <span>Git & GitHub</span>
+    </div>
+
   </div>
 </section>
 
-<section id="education" style="background-color: #121212;">
+
+<!-- <section id="techstack" style="background-color:#121212;">
+  <h2 class="section-title">🛠 Tech Stack</h2>
+  <div class="tech-grid">
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+      <span>Java</span>
+    </div>
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+      <span>HTML5</span>
+    </div>
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+      <span>CSS3</span>
+    </div>
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+      <span>JavaScript</span>
+    </div>
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+      <span>Bootstrap</span>
+    </div>
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+      <span>Git & GitHub</span>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- CERTIFICATE -->
+<!-- <section id="certificates" style="background-color:#1a1a1a;">
+  <h2 class="section-title">🎓 Certificates</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Full Stack Web Development</h3>
+      <p>Issued by Coursera · 2024</p>
+      <a href="certificate-link.pdf" class="cert-btn" target="_blank">View Certificate</a>
+
+    </div>
+    <div class="card">
+      <h3>Java Programming Masterclass</h3>
+      <p>Issued by Udemy · 2024</p>
+      <a href="certificate-link.pdf" class="cert-btn" target="_blank">View Certificate</a>
+
+    </div>
+    <div class="card">
+      <h3>Git & GitHub Essentials</h3>
+      <p>Issued by Great Learning · 2024</p>
+      <a href="certificate-link.pdf" class="cert-btn" target="_blank">View Certificate</a>
+
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+
+
+ <section id="certificates" style="background-color:#1a1a1a;">
+  <h2 class="section-title">🎓 Certificates</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Programming Foundations with JavaScript, HTML & CSS</h3>
+      <p>Issued by <strong>Coursera</strong> · 2024</p>
+      <button class="cert-btn" onclick="openCertModal('certificates/programming java html css.jpeg')">View Certificate</button>
+    </div>
+  
+    <div class="card">
+      <h3>Google AI Essentials</h3>
+      <p>Issued by <strong>Coursera</strong> · 2024</p>
+      <br><br>
+      <button class="cert-btn" onclick="openCertModal('certificates/google ai essential.jpeg')">View Certificate</button>
+    </div>
+
+    <div class="card">
+      <h3>Real-Time E-Commerce Java Project</h3>
+      <p>Issued by <strong>Dhven Tech</strong> · 2024<br>
+      Worked on a dynamic e-commerce backend using Java.</p>
+      <button class="cert-btn" onclick="openCertModal('certificates/Ria Java.png')">View Certificate</button>
+    </div>
+
+    <div class="card">   
+      <h3>Power BI Data Analytics</h3>
+      <p>Issued by <strong>Kasnet Technologies</strong> · 2024<br>
+        Built dashboards & visual reports for real-time insights.</p>
+      <button class="cert-btn" onclick="openCertModal('certificates/powerbi.png')">View Certificate</button>
+    </div>
+
+
+    <div class="card">
+      <h3>Web Development Internship</h3>
+      <p>Issued by <strong>Congifyz Technologies</strong> · 2024<br>
+      Designed interactive UIs & responsive websites using HTML, CSS & JS.</p>
+      <button class="cert-btn" onclick="openCertModal('certificates/cognifyz internship .png')">View Certificate</button>
+    </div>
+
+    <div class="card">
+      <h3>Full Stack Web Development</h3>
+      <p>Issued by <strong>Coursera</strong> · 2024</p>
+      <button class="cert-btn" onclick="openCertModal('certificates/dhventech internship.png')">View Certificate</button>
+    </div>
+  </div>
+
+  <div id="certModal">
+    <span class="close" onclick="closeCertModal()">&times;</span>
+    <img id="certImage" src="" alt="Certificate">
+  </div> 
+  
+</section> 
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="education" style="background-color: #121212;">
   <h2 class="section-title">Education</h2>
   <div class="card-container">
     <div class="card"><h3>Bachelor's in Engineering</h3><p>Electronics & Communication<br />XYZ University</p></div>
     <div class="card"><h3>Full Stack Courses</h3><p>HTML, CSS, JavaScript, Core Java, DSA</p></div>
   </div>
+</section> -->
+
+<section id="education" style="background-color: #121212;">
+  <h2 class="section-title">🎓 Education</h2>
+  <div class="card-container">
+    
+    <div class="card">
+      <h3>Bachelor of Engineering (ECE)</h3>
+      <p>Rashtrasant tukdoji Maharaj ,Nagpur University · 2023 – Present<br />
+      Specializing in Electronics & Communication with a strong focus on technical systems and logical problem-solving.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Full Stack Web Development</h3>
+      <p>Coursera, Udemy, intershala · 2023 – 2024<br />
+      Mastered HTML, CSS, JavaScript, Core Java, Bootstrap, GitHub, and DOM manipulation through real-world projects.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Programming Foundations</h3>
+      <p>Coursera · 2024<br />
+      Solid foundation in programming using Java, Python, C++, with applied learning in DSA, problem solving, and logic building.</p>
+    </div>
+
+    <div class="card">
+      <h3>Real-Time Project & Internships</h3>
+      <p>Congifyz, DhavenTech , kasnet  · 2024<br />
+      Hands-on experience in live projects including E-Commerce backend (Java), and frontend development internships.</p>
+    </div>
+
+  </div>
 </section>
 
-<section id="experience">
+
+<section id="testimonials" style="background-color:#1a1a1a;">
+  <h2 class="section-title">💬 Testimonials 💬</h2>
+  <br>
+  <br><br>
+  <div class="card-container">
+
+    <div class="card">
+      <ion-icon name="chatbubble-ellipses-outline" style="font-size: 1.5rem; color: var(--accent); margin-bottom: 10px;"></ion-icon>
+      <p>"Collaborating with Ria was seamless. Her Java expertise, quick grasp of business needs, and structured delivery elevated our entire product."</p>
+      <h4>— Priya Sharma, Founder, Novatek Solutions</h4>
+    </div>
+
+    <div class="card">
+      <ion-icon name="chatbubble-ellipses-outline" style="font-size: 1.5rem; color: var(--accent); margin-bottom: 10px;"></ion-icon>
+      <p>"Ria developed a highly personalized portal for our campaign. Her aesthetic sense, attention to emotional detailing, and on-time delivery were remarkable."</p>
+      <h4>— Rishabh, Private Client</h4>
+    </div>
+
+    <div class="card">
+      <ion-icon name="chatbubble-ellipses-outline" style="font-size: 1.5rem; color: var(--accent); margin-bottom: 10px;"></ion-icon>
+      <p>"Ria developed a highly personalized portal for our campaign, she delivered everything we needed in less time even on short note also her  delivery were remarkable."</p>
+      <h4>— chaitanya, Private Client</h4>
+    </div>
+
+    <div class="card">
+      <ion-icon name="chatbubble-ellipses-outline" style="font-size: 1.5rem; color: var(--accent); margin-bottom: 10px;"></ion-icon>
+      <p>"She redesigned our platform into a visually dynamic experience with thoughtful animations and interactive UI — beyond expectations."</p>
+      <h4>— pranay , UI/UX Consultant</h4>
+    </div>
+
+  </div>
+  <br><br>
+
+  <div class="floating-love-wall">
+    <span>“Highly reliable.”</span>
+    <span>“Creative and consistent ✨”</span>
+    <span>“Understood our vision.”</span>
+    <span>“Timely delivery & top quality!”</span>
+    <span>“Clean code. Clean design.”</span>
+  </div>
+</section>
+
+      
+<!-- <section id="why-me" style="background-color: #1a1a1a; padding: 60px 30px;">
+  <h2 class="section-title">💡 Why Hire Me?</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>❤️ Passionate Developer</h3>
+      <p>I write every line of code with love (and proper indentation 😌). Your project is not just a task — it’s *mine*.</p>
+    </div>
+    <div class="card">
+      <h3>🚀 Fast & Reliable</h3>
+      <p>Quick delivery, 100% response rate, and a habit of going above and beyond deadlines.</p>
+    </div>
+    <div class="card">
+      <h3>✨ Aesthetic-First</h3>
+      <p>I design experiences that are smooth, pretty, and interactive. Because why not have both brains and beauty?</p>
+    </div>
+  </div>
+</section> -->
+
+
+<section id="whyhire" style="background-color:#121212; padding: 60px 20px;">
+  <h2 class="section-title">💼 Why Hire Me?</h2>
+  <br><br><br>
+  <div class="card-container">
+    <div class="card">
+      <h3>⚡ Quick Learner</h3>
+      <p>I adapt fast and love learning — whether it's new tech, tools, or client needs.</p>
+    </div>
+    <div class="card">
+      <h3>❤️ Passionate Developer</h3>
+      <p>I write every line of code with love (and proper indentation 😌). Your project is not just a task — it’s *mine*.</p>
+    </div>
+    <div class="card">
+      <h3>💖 Custom & Cute Designs</h3>
+      <p>I build romantic portals, cute layouts, and dreamy interfaces with ❤️ and detail.</p>
+    </div>
+    <div class="card">
+      <h3>🛠 Full Stack Developer</h3>
+      <p>From clean frontend to solid Java backend — I handle it all efficiently.</p>
+    </div>
+    <div class="card">
+      <h3>🚀 Fast & Reliable</h3>
+      <p>Quick delivery, 100% response rate, and a habit of going above and beyond deadlines.</p>
+    </div>
+    <div class="card">
+      <h3>📈 Client Satisfaction First</h3>
+      <p>I make sure every project is *exactly* what the client dreamed of — or even better.</p>
+    </div>
+    <div class="card">
+      <h3>✨ Aesthetic-First</h3>
+      <p>I design experiences that are smooth, pretty, and interactive. Because why not have both brains and beauty?</p>
+    </div>
+  </div>
+  <br><br><br> 
+</section>
+
+
+
+
+<!-- <section id="experience">
   <h2 class="section-title">Experience</h2>
   <div class="card-container">
     <div class="card"><h3>Freelance Developer</h3><p>Built custom websites, Java projects, and romantic portals 💕</p></div>
     <div class="card"><h3>Mini Projects</h3><p>Grievance Portal, Java Form Validation, Responsive Product Page</p></div>
   </div>
-</section>
-
-<section id="contact" style="background-color: #121212;">
-  <h2 class="section-title">Contact Me</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea rows="5" placeholder="Your Message" required></textarea>
-    <button class="btn" type="submit">Send Message</button>
-  </form>
-</section>
-
-<section id="projects" style="background-color: #1a1a1a;">
-  <h2 class="section-title">Projects</h2>
+</section> -->
+<section id="experience" style="background-color:#121212;">
+  <h2 class="section-title">💼 Professional Experience</h2>
+  <br>
   <div class="card-container">
+
     <div class="card">
-      <h3>Grievance Portal 💌</h3>
-      <p>A romantic portal website with floating hearts, custom forms, and pink aesthetic.</p>
-      <p><strong>Tech:</strong> HTML, CSS, JS, Google Sheets</p>
+      <h3>Web Development Intern</h3>
+      <p><strong>Congifyz Technology</strong> · Jan 2024 – Apr 2024<br>
+      Contributed to building responsive websites using HTML, CSS, JavaScript, and Bootstrap. Collaborated in an agile team to optimise UI/UX and deploy mobile-friendly layouts for real-world clients.</p>
     </div>
+
     <div class="card">
-      <h3>Weight Tracker 🌸</h3>
-      <p>8-month weight loss & glow-up tracker, Google Sheets connected!</p>
-      <p><strong>Tech:</strong> HTML, JS</p>
+      <h3>Java Project Intern (Real-Time)</h3>
+      <p><strong>Dhaven Tech</strong> · Oct 2023 – Dec 2023<br>
+      Developed scalable backend logic for an e-commerce application using Java and MySQL. Applied object-oriented design principles to manage product data and integrate order management workflows.</p>
     </div>
+
     <div class="card">
-      <h3>Java Compiler Web App ☕</h3>
-      <p>A fun Java IDE in browser with code editor and output system using API.</p>
-      <p><strong>Tech:</strong> HTML, JS, API</p>
+      <h3>Power BI & Data Analytics Intern</h3>
+      <p><strong>Microsoft (Virtual Internship)</strong> · 2023<br>
+      Built analytical dashboards using Power BI. Transformed raw datasets into actionable insights and visualised trends for business decision-making. Focused on real-time reporting and data storytelling.</p>
     </div>
+
+    <div class="card">
+      <h3>Freelance Full Stack Developer</h3>
+      <p><strong>Self-Employed</strong> · 2023 – Present<br>
+      Delivered 10+ full-stack projects including grievance portals, portfolio websites, and themed UI experiences. Integrated APIs, animations, and data handling via Google Sheets. Known for clean code, user-focused design, and timely delivery.</p>
+    </div>
+
+    <div class="card">
+      <h3>Frontend & UI Designer</h3>
+      <p><strong>Independent Projects</strong> · 2023 – Present<br>
+      Designed visually engaging interfaces using Figma and Canva. Specialised in pink-aesthetic, dreamy visuals and client-personalised experiences — especially for personal brands and gift-based web apps.</p>
+    </div>
+
+    <div class="card">
+      <h3>Tech Content Creator & Project Builder</h3>
+      <p><strong>Portfolio-Based</strong> · 2023 – Present<br>
+      Developed mini tools like Java compilers, weight loss trackers, quote generators, and fun interactive UIs. Documented learnings and showcased code structure through GitHub and open-source repositories.</p>
+    </div>
+
+    <div class="card">
+      <h3>Intern – Web & Design Enthusiast</h3>
+      <p><strong>Various Bootcamps & Certifications</strong> · 2022 – 2023<br>
+      Completed courses under Coursera, Great Learning, and Udemy in Full Stack Development, Git & GitHub, Java, and AI Essentials. Applied skills in mini-projects and internship-grade deliverables.</p>
+    </div>
+
   </div>
 </section>
 
 
+
+
+
+<!-- Project Detail Popup -->
+<!-- <div id="projectPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+background:#1c1c1c; padding:30px; border-radius:20px; box-shadow:0 0 20px #ff4c60; z-index:9999; max-width:500px;">
+  <h3 id="projTitle" style="color:#ff4c60;"></h3>
+  <p id="projDesc" style="color:#ddd;"></p>
+  <p><strong style="color:#ff4c60;">Tech Used:</strong> <span id="projTech"></span></p>
+  <button class="btn" onclick="closePopup()">Close</button>
+</div>
+<section id="projects" style="background-color: #1a1a1a;">
+  <h2 class="section-title">Projects</h2>
+
+  <div style="text-align:center; margin-bottom: 30px;">
+    <button class="btn" onclick="filterProjects('all')">All</button>
+    
+    <button class="btn" onclick="filterProjects('java')">Java</button>
+     
+    <button class="btn" onclick="filterProjects('web')">Web</button>
+    
+    <button class="btn" onclick="filterProjects('fun')">Fun</button>
+  </div> -->
+
+
+
+  <!-- <div class="card-container" id="projectContainer">   ///
+    <div class="card project-card java">
+      <h3>Java Compiler ☕</h3>
+      <p>Web IDE with Java API</p>
+    </div>
+    <div class="card project-card web">
+      <h3>Grievance Portal 💌</h3>
+      <p>Romantic portal with forms and floating hearts</p>
+    </div>
+    <div class="card project-card fun">
+      <h3>Weight Tracker 🌸</h3>
+      <p>8-month body glow-up tracker</p>
+    </div>
+  </div> -->
+
+  <!-- yaha se paste -->
+
+
+  <!-- <div class="card-container" id="projectContainer">
+
+   
+    <div class="card project-card web">
+      <h3>Books & Brew ☕📚</h3>
+      <p>Aesthetic bookstore cafe website with menu, collection & events.</p>
+      <button class="btn" onclick="showProject('Books & Brew', 'Responsive HTML/CSS site for a cafe-bookstore, built with elegant design and interactive UI.', 'HTML, CSS, JavaScript')">View</button>
+    </div>
+  
+    
+    <div class="card project-card web">
+      <h3>ShopEase 🛒</h3>
+      <p>Mini e-commerce store with cart and responsive layout.</p>
+      <button class="btn" onclick="showProject('ShopEase', 'Fully responsive product page with filters, cart functionality, and animations.', 'HTML, CSS, JavaScript' )">View</button>
+    </div>
+  
+   
+    <div class="card project-card web">
+      <h3>Grievance Portal 💌</h3>
+      <p>Romantic web portal built for a client with data capture via Google Sheets.</p>
+      <button class="btn" onclick="showProject('Grievance Portal', 'Custom HTML/CSS/JS portal with floating elements and connected Google Sheets.', 'HTML, CSS, JavaScript, Google Apps Script')">View</button>
+    </div>
+  
+    
+    <div class="card project-card fun">
+      <h3>Body Glow-Up Tracker 🌸</h3>
+      <p>8-month transformation journal powered by Sheets.</p>
+      <button class="btn" onclick="showProject('Weight Tracker', 'Personal weight-loss tracker connected with Google Sheets to log and monitor progress.', 'HTML, CSS, JavaScript, Google Sheets')">View</button>
+    </div>
+  
+    
+    <div class="card project-card fun">
+      <h3>Guess The Number 🎯</h3>
+      <p>Classic JS game with fun UI and sound feedback.</p>
+      <button class="btn" onclick="showProject('Guess The Number', 'Fun interactive number guessing game built using JS logic and DOM handling.', 'HTML, CSS, JavaScript')">View</button>
+    </div>
+  
+   
+    <div class="card project-card web">
+      <h3>To-Do List ✅</h3>
+      <p>Simple, clean task manager to organise your day.</p>
+      <button class="btn" onclick="showProject('To-Do List', 'Task management app with add/remove functionality and local storage.', 'HTML, CSS, JavaScript')">View</button>
+    </div>
+  
+    
+    <div class="card project-card java">
+      <h3>JobFinder 🚀</h3>
+      <p>React-based job portal with filtering and search system.</p>
+      <button class="btn" onclick="showProject('Job Portal', 'Built using React to create dynamic job listings with filters and routes.', 'React, CSS Modules')">View</button>
+    </div>
+  
+  
+    <div class="card project-card fun">
+      <h3>Offline ChatBot 🤖</h3>
+      <p>Predefined response bot for fun chats without internet!</p>
+      <button class="btn" onclick="showProject('Offline ChatBot', 'JS-based chatbot with predefined responses and smooth chat UI.', 'HTML, CSS, JavaScript')">View</button>
+    </div>
+  
+  </div>
+  
+</section>  -->
+  
+
+<!-- 
+
+<div id="projectPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+background:#1c1c1c; padding:30px; border-radius:20px; box-shadow:0 0 20px #ff4c60; z-index:9999; max-width:500px;">
+  <h3 id="projTitle" style="color:#ff4c60;"></h3>
+  <p id="projDesc" style="color:#ddd;"></p>
+  <p><strong style="color:#ff4c60;">Tech Used:</strong> <span id="projTech"></span></p>
+  <a id="projLink" href="#" target="_blank" class="btn" style="margin-top: 10px;">Visit Project 🔗</a>
+  <button class="btn" onclick="closePopup()">Close</button>
+</div>
+
+
+<section id="projects" style="background-color: #1a1a1a;">
+  <h2 class="section-title">💼 Projects</h2>
+
+ 
+  <div style="text-align:center; margin-bottom: 30px;">
+    <button class="btn" onclick="filterProjects('all')">All</button>
+    <button class="btn" onclick="filterProjects('java')">Java</button>
+    <button class="btn" onclick="filterProjects('web')">Web</button>
+    <button class="btn" onclick="filterProjects('fun')">Fun</button>
+  </div>
+
+  
+  <div class="card-container" id="projectContainer">
+
+    <div class="card project-card web">
+      <h3>Books & Brew ☕📚</h3>
+      <p>Aesthetic bookstore cafe site with menu, collection & events.</p>
+      <button class="btn" onclick="showProject(
+        'Guess The Number 🎯',
+        'Fun number guessing game using JS DOM manipulation.',
+        'HTML, CSS, JavaScript',
+        'https://guessthenumbergame.vercel.app'
+      )">View</button>
+          </div>
+
+    <div class="card project-card web">
+      <h3>ShopEase 🛒</h3>
+      <p>Mini e-commerce store with cart & animations.</p>
+      <button class="btn" onclick="showProject(
+  'Guess The Number 🎯',
+  'Fun number guessing game using JS DOM manipulation.',
+  'HTML, CSS, JavaScript',
+  'https://guessthenumbergame.vercel.app'
+)">View</button>
+    </div>
+
+    <div class="card project-card web">
+      <h3>Grievance Portal 💌</h3>
+      <p>Romantic web portal for a client with Google Sheets integration.</p>
+      <button class="btn" onclick="showProject(
+  'Guess The Number 🎯',
+  'Fun number guessing game using JS DOM manipulation.',
+  'HTML, CSS, JavaScript',
+  'https://guessthenumbergame.vercel.app'
+)">View</button>
+    </div>
+
+    <div class="card project-card fun">
+      <h3>Body Glow-Up Tracker 🌸</h3>
+      <p>8-month transformation tracker using Sheets.</p>
+      <button class="btn" onclick="showProject(
+  'Guess The Number 🎯',
+  'Fun number guessing game using JS DOM manipulation.',
+  'HTML, CSS, JavaScript',
+  'https://guessthenumbergame.vercel.app'
+)">View</button>
+    </div>
+
+    <div class="card project-card fun">
+      <h3>Guess The Number 🎯</h3>
+      <p>Classic JS game with fun logic and sound feedback.</p>
+      <button class="btn" onclick="showProject(
+  'Guess The Number 🎯',
+  'Fun number guessing game using JS DOM manipulation.',
+  'HTML, CSS, JavaScript',
+  'https://guessthenumbergame.vercel.app'
+)">View</button>
+
+    </div>
+
+    <div class="card project-card web">
+      <h3>To-Do List ✅</h3>
+      <p>Simple task manager with local storage support.</p>
+      <button class="btn" onclick="showProject(
+        'Guess The Number 🎯',
+        'Fun number guessing game using JS DOM manipulation.',
+        'HTML, CSS, JavaScript',
+        'https://guessthenumbergame.vercel.app'
+      )">View</button>
+    </div>
+
+    <div class="card project-card java">
+      <h3>JobFinder 🚀</h3>
+      <p>React-based job portal with search and filter.</p>
+      <button class="btn" onclick="showProject(
+        'Guess The Number 🎯',
+        'Fun number guessing game using JS DOM manipulation.',
+        'HTML, CSS, JavaScript',
+        'https://guessthenumbergame.vercel.app'
+      )">View</button>
+    </div>
+
+    <div class="card project-card fun">
+      <h3>Offline ChatBot 🤖</h3>
+      <p>Fun chatbot with predefined replies and smooth UI.</p>
+      <button class="btn" onclick="showProject(
+  'Guess The Number 🎯',
+  'Fun number guessing game using JS DOM manipulation.',
+  'HTML, CSS, JavaScript',
+  'https://guessthenumbergame.vercel.app'
+)">View</button>
+    </div>
+
+  </div>
+</section> -->
+
+
+
+
+
+<!-- Project Popup -->
+<!-- <div id="projectPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+background:#1c1c1c; padding:30px; border-radius:20px; box-shadow:0 0 20px #ff4c60; z-index:9999; max-width:500px;">
+  <h3 id="projTitle" style="color:#ff4c60;"></h3>
+  <p id="projDesc" style="color:#ddd;"></p>
+  <p><strong style="color:#ff4c60;">Tech Used:</strong> <span id="projTech"></span></p>
+  <a id="projLink" href="#" target="_blank" class="btn" style="margin-top: 10px; display: none;">Visit Project 🔗</a>
+  <button class="btn" onclick="closePopup()">Close</button>
+</div> -->
+
+<!-- <div id="projectPopup" style="
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff4c60;
+  z-index: 9999;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+">
+  <h3 id="projTitle" style="color: #ff4c60; margin-bottom: 10px;"></h3>
+  <p id="projDesc" style="color: #ddd; margin-bottom: 10px;"></p>
+  <p>
+    <strong style="color: #ff4c60;">Tech Used:</strong>
+    <span id="projTech" style="color: #ccc;"></span>
+  </p> -->
+
+  <!-- ✅ Stacked buttons properly -->
+  <!-- <div style="margin-top: 25px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+    <a id="projLink" href="#" target="_blank" class="btn" style="display: inline-block;">🔗 Visit Project</a>
+    <button class="btn" onclick="closePopup()">Close</button>
+  </div>
+</div> -->
+<div id="projectPopup" style="
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff4c60;
+  z-index: 9999;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+">
+  <h3 id="projTitle" style="color: #ff4c60; margin-bottom: 10px;"></h3>
+  <p id="projDesc" style="color: #ddd; margin-bottom: 10px;"></p>
+  <p><strong style="color:#ff4c60;">Tech Used:</strong> <span id="projTech" style="color:#ccc;"></span></p>
+
+  <!-- ✅ ONLY ONE Visit Project button here -->
+  <div style="margin-top: 25px; display: flex; flex-direction: column; gap: 12px;">
+    <!-- <a id="projLink" href="#" target="_blank" class="btn">🔗 Visit Project</a> -->
+    <a id="projLink" href="#" target="_blank" style="
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ff4d6d;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 76, 96, 0.4);
+    display: inline-block;
+  " onmouseover="this.style.background='rgba(255,255,255,0.1)'" 
+  onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+  🔗 Visit Project
+  </a>
+  
+    <button class="btn" onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+
+
+
+
+<!-- Project Section -->
+<section id="projects" style="background-color: #1a1a1a;">
+  <h2 class="section-title">💼 Projects</h2>
+
+  <!-- Filter Buttons -->
+  <div style="text-align:center; margin-bottom: 30px;">
+    <button class="btn" onclick="filterProjects('all')">All</button>
+    <button class="btn" onclick="filterProjects('java')">Java</button>
+    <button class="btn" onclick="filterProjects('web')">Web</button>
+    <button class="btn" onclick="filterProjects('fun')">Fun</button>
+  </div>
+
+  <!-- Project Cards -->
+  <div class="card-container" id="projectContainer">
+
+    <div class="card project-card web">
+      <h3>Books & Brew ☕📚</h3>
+      <p>Aesthetic bookstore cafe site with menu, collection & events.</p>
+      <button class="btn" onclick="showProject('Books & Brew ☕📚', 'Responsive HTML/CSS site for a cozy cafe-bookstore with interactive UI.', 'HTML, CSS, JavaScript', 'https://websiteproject-six.vercel.app')">View</button>
+    </div>
+
+    <div class="card project-card web">
+      <h3>ShopEase 🛒</h3>
+      <p>Mini e-commerce store with cart & animations.</p>
+      <button class="btn" onclick="showProject('ShopEase 🛒', 'Fully responsive mini e-commerce product page with cart, filters, and animations.', 'HTML, CSS, JavaScript', 'https://ecommerce-chi-sable.vercel.app')">View</button>
+    </div>
+
+    <div class="card project-card web">
+      <h3>Grievance Portal 💌</h3>
+      <p>Romantic portal for client with Google Sheets integration.</p>
+      <button class="btn" onclick="showProject('Grievance Portal 💌', 'Client-based romantic web portal with animations and Google Sheets backend.', 'HTML, CSS, JavaScript, Google Apps Script', 'https://trisha-8b0e3zu1f-riya-ninawes-projects.vercel.app/')">View</button>
+    </div>
+
+    <div class="card project-card fun">
+      <h3>Body Glow-Up Tracker 🌸</h3>
+      <p>8-month transformation tracker using Sheets.</p>
+      <button class="btn" onclick="showProject('Body Glow-Up Tracker 🌸', 'Personal weight-loss tracker connected to Google Sheets.', 'HTML, CSS, JavaScript, Google Sheets', 'https://tracker-khaki-chi.vercel.app/')">View</button>
+    </div>
+
+    <div class="card project-card fun">
+      <h3>Guess The Number 🎯</h3>
+      <p>Classic JS game with fun logic and sound feedback.</p>
+      <button class="btn" onclick="showProject('Guess The Number 🎯', 'Fun number guessing game using JS DOM manipulation.', 'HTML, CSS, JavaScript', 'https://guessgamer.vercel.app')">View</button>
+    </div>
+
+    <div class="card project-card web">
+      <h3>To-Do List ✅</h3>
+      <p>Simple task manager with local storage support.</p>
+      <button class="btn" onclick="showProject('To-Do List ✅', 'Task management app with add/remove & local storage.', 'HTML, CSS, JavaScript', 'https://to-do-list-app-lovat-eight.vercel.app') ">View</button>
+    </div>
+
+    <div class="card project-card java">
+      <h3>JobFinder 🚀</h3>
+      <p>React-based job portal with filters and search.</p>
+      <button class="btn" onclick="showProject('JobFinder 🚀', 'Job portal built in React with routing, filtering and component-based UI.', 'React, CSS Modules', 'https://jobify-henna-rho.vercel.app/') ">View</button>
+    </div>
+
+    <div class="card project-card fun">
+      <h3>Offline ChatBot 🤖</h3>
+      <p>Chatbot with predefined answers and smooth UI.</p>
+      <button class="btn" onclick="showProject('Offline ChatBot 🤖', 'Offline chatbot with predefined JS responses and animation.', 'HTML, CSS, JavaScript', 'https://to-do-list-app-yt5y.vercel.app/')">View</button>
+    </div>
+
+  </div>
+  
+
+</section>
+
+<!-- JavaScript -->
+<script>
+  function showProject(title, desc, tech, link) {
+    document.getElementById("projTitle").innerText = title;
+    document.getElementById("projDesc").innerText = desc;
+    document.getElementById("projTech").innerText = tech;
+    document.getElementById("projLink").href = link;
+    document.getElementById("projLink").style.display = "inline-block";
+    document.getElementById("projectPopup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("projectPopup").style.display = "none";
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="contact" style="padding: 60px 20px; margin-top: 50px;  ">
+  <h2 class="section-title">Contact Me💌</h2>
+<form id="contactForm"  action="https://formsubmit.co/riyaninawe15@gmail.com" method="POST" onsubmit="return validateForm(event)">
+  <input type="text" id="name" name="name" placeholder="Your Name" />
+  <small id="nameError" class="error-msg"></small>
+
+  <input type="email" id="email" name="email" placeholder="Your Email" />
+  <small id="emailError" class="error-msg"></small>
+
+  <textarea id="message" name="message" rows="5" placeholder="Your Message"></textarea>
+  <small id="messageError" class="error-msg"></small>
+
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  
+  <button class="btn" type="submit">Send Message</button>
+</form>
+</section>
+
+<!-- Success popup -->
+<div id="successMsg" style="display:none; text-align:center; margin-top:20px; color:#5df5a8; font-weight:600;">
+  ✅ Message Sent Successfully!
+</div>
+
+
+
+
 <footer>
-  <p>&copy; 2025 Ria Ninawe. All Rights Reserved.</p>
+  <p>&copy; 2025 Riya Ninawe. All Rights Reserved.</p>
 </footer>
+
+<a href="#home" id="backToTopBtn" title="Back to Top">⬆</a>
+<script src="https://unpkg.com/scrollreveal">
+  // Scroll Reveal Animations
+ScrollReveal().reveal('.section-title', {
+  delay: 200,
+  distance: '40px',
+  origin: 'top',
+  duration: 800,
+  easing: 'ease-in-out',
+  reset: false
+});
+
+ScrollReveal().reveal('.card', {
+  delay: 300,
+  distance: '50px',
+  origin: 'bottom',
+  duration: 1000,
+  interval: 100,
+  easing: 'ease-in-out',
+  reset: false
+});
+
+ScrollReveal().reveal('.intro, .profile-img', {
+  delay: 300,
+  distance: '50px',
+  origin: 'left',
+  duration: 900,
+  easing: 'ease-in-out',
+  reset: false
+});
+ScrollReveal().reveal('.card', {
+  delay: 300,
+  distance: '50px',
+  origin: 'bottom',
+  duration: 1000,
+  interval: 100,
+  easing: 'ease-in-out',
+  reset: false
+});
+ScrollReveal().reveal('.timeline-item', {
+  delay: 300,
+  distance: '40px',
+  origin: 'left',
+  duration: 800,
+  interval: 200,
+  reset: false
+});
+
+
+</script>
+
 <script>
   const roles = ["Java Developer","Freelancer","Frontend-developer","Backend-developer","Website-developer"];
   let i = 0;
@@ -373,7 +2129,354 @@ function closeHireForm() {
   function toggleMenu() {
     document.getElementById("navbar").classList.toggle("show");
   }
+
+  function showDetails(title, desc, tech) {
+  document.getElementById("projTitle").innerText = title;
+  document.getElementById("projDesc").innerText = desc;
+  document.getElementById("projTech").innerText = tech;
+  document.getElementById("projectPopup").style.display = "block";
+}
+function closePopup() {
+  document.getElementById("projectPopup").style.display = "none";
+}
+function filterProjects(category) {
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
+    if (category === 'all' || card.classList.contains(category)) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  let current = '';
+  sections.forEach(section => {
+    const top = window.scrollY;
+    const offset = section.offsetTop - 100;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+
+    if (top >= offset && top < offset + height) {
+      current = id;
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
+function toggleTheme() {
+  const body = document.body;
+  if (body.style.backgroundColor === "white") {
+    body.style.backgroundColor = "#0f0f0f";
+    body.style.color = "white";
+  } else {
+    body.style.backgroundColor = "white";
+    body.style.color = "#0f0f0f";
+  }
+}
+ScrollReveal().reveal('.skill', {
+  delay: 300,
+  distance: '30px',
+  origin: 'bottom',
+  duration: 1000,
+  interval: 100
+});
+ScrollReveal().reveal('#clients img', {
+  delay: 200,
+  distance: '30px',
+  origin: 'bottom',
+  duration: 800,
+  interval: 150
+});
+window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+
+function filterProjects(category) {
+  const cards = document.querySelectorAll('.project-card');
+  const buttons = document.querySelectorAll('.btn');
+
+  cards.forEach(card => {
+    if (category === 'all' || card.classList.contains(category)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // Optional: Highlight active filter button
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.onscroll = () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+};
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
+function openCertModal(src) {
+  document.getElementById('certImg').src = src;
+  document.getElementById('certModal').style.display = 'block';
+}
+function closeCertModal() {
+  document.getElementById('certModal').style.display = 'none';
+}
+function validateForm() {
+  let valid = true;
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const messageError = document.getElementById("messageError");
+
+  nameError.textContent = "";
+  emailError.textContent = "";
+  messageError.textContent = "";
+
+  if (name.value.trim().length < 2) {
+    nameError.textContent = "Please enter your name";
+    valid = false;
+  }
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.value.match(emailPattern)) {
+    emailError.textContent = "Enter a valid email";
+    valid = false;
+  }
+
+  if (message.value.trim() === "") {
+    messageError.textContent = "Message cannot be empty";
+    valid = false;
+  }
+
+  return valid;
+}
+function validateForm(event) {
+  event.preventDefault(); // stop the form for now
+
+  let valid = true;
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const messageError = document.getElementById("messageError");
+
+  const successMsg = document.getElementById("successMsg");
+
+  // Reset
+  nameError.textContent = "";
+  emailError.textContent = "";
+  messageError.textContent = "";
+  successMsg.style.display = "none";
+
+  // Validate name
+  if (name.value.trim().length < 2) {
+    nameError.textContent = "Please enter your name";
+    valid = false;
+  }
+
+  // Validate email
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.value.match(emailPattern)) {
+    emailError.textContent = "Enter a valid email";
+    valid = false;
+  }
+
+  // Validate message
+  if (message.value.trim() === "") {
+    messageError.textContent = "Message cannot be empty";
+    valid = false;
+  }
+
+  // If all good → show success & submit
+  if (valid) {
+    successMsg.style.display = "block";
+    setTimeout(() => {
+      event.target.submit(); // now submit to FormSubmit
+    }, 1000); // wait 1 sec to show success message
+  }
+
+  return false;
+}
+
+
 </script>
+
+
+<script>
+  function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
+  }
+
+  
+  
+
+</script>
+<script>
+  function openCertModal(src) {
+    document.getElementById("certImage").src = src;
+    document.getElementById("certModal").style.display = "block";
+  }
+
+  function closeCertModal() {
+    document.getElementById("certModal").style.display = "none";
+  }
+ 
+
+</script>
+
+<script>
+  function showProject(title, desc, tech, link) {
+    document.getElementById('projTitle').textContent = title;
+    document.getElementById('projDesc').textContent = desc;
+    document.getElementById('projTech').textContent = tech;
+    document.getElementById('projLink').href = link;
+    document.getElementById('projectPopup').style.display = 'block';
+  }
+
+  function closePopup() {
+    document.getElementById('projectPopup').style.display = 'none';
+  }
+
+  function filterProjects(category) {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      if (category === 'all' || card.classList.contains(category)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+
+<script>
+  function openCertModal(imagePath) {
+    document.getElementById('certImage').src = imagePath;
+    document.getElementById('certModal').style.display = 'flex';
+  }
+
+  function closeCertModal() {
+    document.getElementById('certModal').style.display = 'none';
+  }
+
+  // Optional: close modal when clicking outside image
+  document.getElementById('certModal').addEventListener('click', function (e) {
+    if (e.target.id === 'certModal') {
+      closeCertModal();
+    }
+  });
+
+  function showProject(title, desc, tech) {
+  document.getElementById('projTitle').innerText = title;
+  document.getElementById('projDesc').innerText = desc;
+  document.getElementById('projTech').innerText = tech;
+  document.getElementById('projectPopup').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('projectPopup').style.display = 'none';
+}
+
+</script>
+<script>
+function showProject(title, desc, tech, link) {
+  document.getElementById("projTitle").innerText = title;
+  document.getElementById("projDesc").innerText = desc;
+  document.getElementById("projTech").innerText = tech;
+
+  // Add visit button dynamically
+  const visitBtn = document.createElement("a");
+  visitBtn.href = link;
+  visitBtn.target = "_blank";
+  visitBtn.className = "visit-btn glass-btn";
+  visitBtn.innerText = "🔗 Visit Project";
+
+  // Remove existing visit buttons if any
+  const existing = document.querySelector("#projectPopup .visit-btn");
+  if (existing) existing.remove();
+
+  // Insert after tech used line
+  document.getElementById("projTech").parentNode.appendChild(visitBtn);
+
+  document.getElementById("projectPopup").style.display = "block";
+}
+function showProject(title, desc, tech, link) {
+  document.getElementById("projTitle").innerText = title;
+  document.getElementById("projDesc").innerText = desc;
+  document.getElementById("projTech").innerText = tech;
+  document.getElementById("projLink").href = link;
+
+  document.getElementById("projectPopup").style.display = "block";
+}
+
+</script>
+<div id="certModal" style="display:none; position:fixed; top:50%; left:50%;
+transform:translate(-50%,-50%); background:#1c1c1c; padding:20px; border-radius:20px;
+box-shadow:0 0 20px #ff4c60; z-index:9999; max-width:90%; max-height:90%;">
+  <img id="certImg" src="" style="width:100%; max-height:80vh; border-radius:10px;">
+  <button class="btn" onclick="closeCertModal()" style="margin-top:10px;">Close</button>
+</div>
 
 
 
